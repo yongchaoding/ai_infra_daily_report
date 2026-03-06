@@ -1,0 +1,29 @@
+# Git
+.git/
+
+# OpenClaw internal
+.clawdhub/
+.openclaw/
+*.pyc
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.venv/
+venv/
+
+# Scripts
+push-to-github.sh

@@ -1,28 +1,35 @@
-# 📊 ArXiv 推理性能优化论文分析
+# 📊 AI Infra Daily Report
 
-**本仓库**: 每日/每周 ArXiv 论文分析，专注于 LLM/多模态推理性能优化方向
+**仓库**: ArXiv 论文分析 + AI 基础设施工程  
+**更新频率**: 工作日每日更新  
+**维护者**: [@yongchaoding](https://github.com/yongchaoding)
 
 ---
 
 ## 📁 目录结构
 
 ```
-arxiv-inference-optimization/
-├── README.md                          # 本文件
-├── reports/
-│   ├── 2026-03/                       # 2026 年 3 月报告
-│   │   ├── performance_report.md      # 15 篇论文概览 + 性能数据
-│   │   └── deep_analysis.md           # 15 篇完整摘要解读
-│   └── .../                           # 未来报告
-└── scripts/
-    └── (可选) 分析脚本
+ai_infra_daily_report/
+├── README.md                    # 本文件
+├── .gitignore                   # Git 忽略配置
+├── reports/                     # 论文分析报告
+│   └── 2026-03/                 # 2026 年 3 月
+│       ├── performance_report.md    # 论文性能概览
+│       └── deep_analysis.md         # 论文深度解读
+└── ai_infra/                    # AI 基础设施工程
+    ├── README.md                # 工程说明
+    ├── deployment/              # 部署配置
+    ├── monitoring/              # 监控告警
+    ├── ci-cd/                   # 持续集成/部署
+    ├── performance/             # 性能优化
+    └── docs/                    # 工程文档
 ```
 
 ---
 
 ## 📈 最新报告 (2026-03-06)
 
-### 分析概览
+### ArXiv 推理性能优化论文分析
 
 | 指标 | 数值 |
 |------|------|
@@ -32,14 +39,14 @@ arxiv-inference-optimization/
 | **性能相关** | 15 篇 (20%) |
 | **解读深度** | 摘要原文 + 技术细节 + 实现推测 |
 
-### 报告文件
+### 📊 报告文件
 
 | 文件 | 描述 | 链接 |
 |------|------|------|
-| **Performance Report** | 15 篇论文概览 + 性能数据对比 | [查看](reports/2026-03/performance_report.md) |
-| **Deep Analysis** | 15 篇完整摘要深度解读 | [查看](reports/2026-03/deep_analysis.md) |
+| **Performance Report** | 15 篇论文概览 + 性能数据对比 | [reports/2026-03/performance_report.md](reports/2026-03/performance_report.md) |
+| **Deep Analysis** | 15 篇完整摘要深度解读 | [reports/2026-03/deep_analysis.md](reports/2026-03/deep_analysis.md) |
 
-### TOP 5 必读论文
+### 🏆 TOP 5 必读论文
 
 | 排名 | 论文 | 核心亮点 | arXiv |
 |------|------|---------|-------|
@@ -49,7 +56,7 @@ arxiv-inference-optimization/
 | 4 | **Reasoning Theater** | early exit 减少 80% token | [2603.05488](https://arxiv.org/abs/2603.05488) |
 | 5 | **MobileFetalCLIP** | 26x 压缩，1.6ms 推理 | [2603.05421](https://arxiv.org/abs/2603.05421) |
 
-### 核心趋势洞察
+### 🔥 核心趋势
 
 ```
 2026-03-06 推理性能优化趋势:
@@ -61,80 +68,56 @@ arxiv-inference-optimization/
 └── 6. 内在能力 → 从外部依赖到参数知识挖掘
 ```
 
-### 技术成熟度评估
+---
 
-| 技术 | 成熟度 | 代表论文 | 产业化时间 |
-|------|--------|---------|-----------|
-| MoE 稀疏 | ⭐⭐⭐⭐ | ECG-MoE, Timer-S1 | 已商用 |
-| Early Exit | ⭐⭐⭐ | Reasoning Theater | 1-2 年 |
-| 知识蒸馏 | ⭐⭐⭐⭐ | MobileFetalCLIP | 已商用 |
-| 扩散加速 | ⭐⭐⭐ | PRR | 1-2 年 |
-| 多 Agent 规划 | ⭐⭐ | HiMAP-Travel | 2-3 年 |
-| 记忆管理 | ⭐⭐ | A-MAC | 2-3 年 |
+## 🛠️ AI Infra 工程
+
+### 目录说明
+
+| 目录 | 用途 | 状态 |
+|------|------|------|
+| `ai_infra/deployment/` | K8s、Docker、Terraform 部署配置 | 🚧 初始化中 |
+| `ai_infra/monitoring/` | Prometheus、Grafana 监控告警 | 🚧 初始化中 |
+| `ai_infra/ci-cd/` | GitHub Actions、Jenkins Pipeline | 🚧 初始化中 |
+| `ai_infra/performance/` | 基准测试、性能分析、优化方案 | 🚧 初始化中 |
+| `ai_infra/docs/` | 架构设计、运维手册、最佳实践 | 🚧 初始化中 |
+
+### 计划内容
+
+- [ ] LLM 服务部署配置 (vLLM, SGLang, TGI)
+- [ ] 推理性能监控仪表板
+- [ ] 自动化 CI/CD Pipeline
+- [ ] GPU 资源调度优化
+- [ ] 模型服务最佳实践
 
 ---
 
-## 📂 历史报告
+## 📬 更新计划
 
-| 日期 | 报告 | 论文数 | 链接 |
-|------|------|--------|------|
-| 2026-03-06 | ArXiv 推理性能优化分析 | 15 篇 | [查看](reports/2026-03/) |
+### 每日更新 (工作日)
+- ✅ ArXiv 最新论文分析 (cs.AI, cs.CL, cs.LG, cs.CV)
+- 📊 性能相关论文深度解读
+- 🔗 arXiv 链接 + 代码仓库
 
----
+### 每周更新
+- 📈 周度趋势分析
+- 🏆 Top 10 论文推荐
+- 📊 技术成熟度评估
 
-## 🔍 分析方法论
-
-### 数据来源
-- **arXiv API**: cs.AI, cs.CL, cs.LG, cs.CV 分类
-- **排序**: 提交日期降序
-- **覆盖**: 每日最新提交
-
-### 筛选标准
-```
-优先级 = 性能相关度 × 影响范围 × 创新性 × 可信度 × 时效性
-```
-
-| 维度 | 判断依据 | 权重 |
-|------|---------|------|
-| **性能相关度** | optimization, acceleration, efficient 等关键词 | ⭐⭐⭐ |
-| **影响范围** | 通用场景 vs 垂直领域 | ⭐⭐ |
-| **创新性** | 新框架/方法 vs 增量改进 | ⭐⭐ |
-| **可信度** | 机构知名度、作者阵容、实验数据 | ⭐⭐ |
-| **时效性** | 提交日期 | ⭐ |
-
-### 解读结构
-每篇论文包含：
-- 📝 摘要原文关键信息（结构化提取）
-- 🔬 技术深度解读（原理 + 实现 + 应用）
-- ⚠️ 未明确的技术细节（诚实说明局限）
-
----
-
-## 🛠️ 工具与技术
-
-| 工具 | 用途 |
-|------|------|
-| **searxng** | 隐私保护搜索引擎 |
-| **arXiv API** | 论文元数据获取 |
-| **web_fetch** | 网页内容抓取 |
-| **OpenClaw** | AI 助手框架 |
-
----
-
-## 📬 更新频率
-
-- **工作日**: 每日分析最新提交
-- **周末**: 周汇总 + 趋势分析
-- **月末**: 月度深度报告
+### 每月更新
+- 📖 月度深度报告
+- 🔮 技术预测与展望
+- 📊 机构影响力分析
 
 ---
 
 ## 🤝 贡献
 
 欢迎提交 Issue 或 PR：
-- 发现遗漏的重要论文
-- 技术解读错误纠正
-- 新的分析维度建议
+- 📝 发现遗漏的重要论文
+- 🔧 技术解读错误纠正
+- 💡 新的分析维度建议
+- 🛠️ AI Infra 工程实践分享
 
 ---
 
@@ -144,5 +127,12 @@ MIT License
 
 ---
 
+## 📞 联系方式
+
+- **GitHub**: [@yongchaoding](https://github.com/yongchaoding)
+- **Issues**: [提交 Issue](https://github.com/yongchaoding/ai_infra_daily_report/issues)
+
+---
+
 **最后更新**: 2026-03-06  
-**维护者**: OpenClaw Assistant
+**当前版本**: v1.0.0
