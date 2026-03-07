@@ -15,12 +15,16 @@
 # 1. 编辑 crontab
 crontab -e
 
-# 2. 添加以下行
-0 10 * * * /bin/bash /home/admin/.openclaw/workspace/scripts/daily_arxiv_analysis.sh >> /home/admin/.openclaw/workspace/logs/cron.log 2>&1
+# 2. 添加以下行（日志由脚本内部管理，无需 cron 重定向）
+0 10 * * * /bin/bash /home/admin/.openclaw/workspace/scripts/daily_arxiv_analysis.sh
 
 # 3. 验证
 crontab -l
 ```
+
+> ⚠️ **重要**: 不要在 cron 行中添加 `>> /path/to/logs/cron.log` 重定向！
+> 脚本内部已管理日志输出到 `logs/daily_analysis_YYYY-MM-DD.log`。
+> 如果 logs 目录不存在，cron 重定向会导致 bash 无法启动脚本。
 
 ### 方法 2: 使用系统 cron 目录
 
